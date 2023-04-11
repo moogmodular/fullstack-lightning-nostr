@@ -1,0 +1,72 @@
+{
+    "name": "nostr-bot",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "postinstall": "prisma generate",
+        "lint": "next lint",
+        "start": "next start"
+    },
+    "prisma": {
+        "seed": "yarn ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed-prod.ts"
+    },
+    "prettier": {
+        "printWidth": 120,
+        "singleQuote": true,
+        "useTabs": false,
+        "tabWidth": 4,
+        "semi": false,
+        "bracketSpacing": true,
+        "trailingComma": "all"
+    },
+    "dependencies": {
+        "@prisma/client": "^4.12.0",
+        "@tanstack/react-query": "^4.29.1",
+        "@trpc/client": "^10.19.1",
+        "@trpc/next": "^10.19.1",
+        "@trpc/react-query": "^10.19.1",
+        "@trpc/server": "^10.19.1",
+        "next": "^13.3.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "superjson": "1.12.2",
+        "zod": "^3.21.4",
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@formkit/auto-animate": "^1.0.0-beta.6",
+        "@hookform/resolvers": "^3.0.1",
+        "@mui/icons-material": "^5.11.16",
+        "@mui/material": "^5.11.16",
+        "@tailwindcss/typography": "^0.5.9",
+        "jsonwebtoken": "^9.0.0",
+        "lightning": "^7.1.9",
+        "nostr-tools": "^1.8.3",
+        "trpc-openapi": "^1.1.2",
+        "ws": "^8.13.0",
+        "zustand": "^4.3.7"
+    },
+    "devDependencies": {
+        "@types/eslint": "^8.37.0",
+        "@types/node": "^18.15.11",
+        "@types/prettier": "^2.7.2",
+        "@types/react": "^18.0.34",
+        "@types/react-dom": "^18.0.11",
+        "@typescript-eslint/eslint-plugin": "^5.57.1",
+        "@typescript-eslint/parser": "^5.57.1",
+        "autoprefixer": "^10.4.14",
+        "eslint": "^8.38.0",
+        "eslint-config-next": "^13.3.0",
+        "postcss": "^8.4.21",
+        "prettier": "^2.8.7",
+        "prisma": "^4.12.0",
+        "tailwindcss": "^3.3.1",
+        "typescript": "^5.0.4",
+        "@types/jsonwebtoken": "^9.0.1",
+        "prettier-plugin-tailwindcss": "^0.2.7"
+    },
+    "ct3aMetadata": {
+        "initVersion": "7.10.3"
+    }
+}
