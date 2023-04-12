@@ -70,7 +70,13 @@ const startSubscriptions = () => {
                     pubkey: publicKey,
                 }
 
-                return finishEvent(unsignedEvent, privateKey)
+                const finishedEvent = finishEvent(unsignedEvent, privateKey)
+
+                console.log('finishedEvent', finishedEvent)
+
+                relayPool.publish(finishedEvent, relays)
+
+                return finishedEvent
             }
             void doEvent()
         },
