@@ -42,7 +42,7 @@
         "@tailwindcss/typography": "^0.5.9",
         "jsonwebtoken": "^9.0.0",
         "lightning": "^7.1.9",
-        "nostr-relaypool": "0.6.7",
+        "nostr-relaypool": "0.6.16",
         "trpc-openapi": "^1.1.2",
         "ws": "^8.13.0",
         "zustand": "^4.3.7"
