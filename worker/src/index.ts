@@ -2,11 +2,11 @@ import { initTRPC } from '@trpc/server'
 import { createHTTPServer } from '@trpc/server/adapters/standalone'
 import cron from 'node-cron'
 import { format } from 'date-fns'
-import { finishEvent, getPublicKey, Kind } from 'nostr-tools'
 import dotenv from 'dotenv'
 
 import { RelayPool } from 'nostr-relaypool'
 import fetch from 'node-fetch'
+import { finishEvent, getPublicKey, Kind } from 'nostr-tools'
 
 export type AppRouter = typeof appRouter
 
