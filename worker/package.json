@@ -1,14 +1,18 @@
 {
     "name": "@examples/minimal",
     "private": true,
+    "type": "module",
     "version": "10.14.0",
     "scripts": {
         "build": "tsc",
         "dev": "tsx watch src",
-        "start": "node dist/src",
+        "start": "node dist",
         "lint": "eslint --ext \".js,.ts,.tsx\" --report-unused-disable-directives */*.ts",
         "test-dev": "start-server-and-test 'tsx src' 2022 'tsx client'",
         "test-start": "start-server-and-test 'node dist/src' 2022 'node dist/client'"
+    },
+    "prisma": {
+        "seed": "yarn ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed-prod.ts"
     },
     "workspaces": [
         "client",
