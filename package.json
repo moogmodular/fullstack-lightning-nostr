@@ -9,8 +9,10 @@
         "dev": "run-p dev:* --print-label",
         "build:next": "yarn --cwd packages/app build",
         "build:worker": "yarn --cwd packages/worker build",
+        "build": "run-p build:* --print-label",
         "start:next": "yarn --cwd packages/app start",
         "start:worker": "yarn --cwd packages/worker start",
+        "start": "run-p start:* --print-label",
         "generate:prisma": "yarn --cwd packages/db-prisma npx prisma generate"
     },
     "prettier": {
