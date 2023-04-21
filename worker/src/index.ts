@@ -3,10 +3,12 @@ import { createHTTPServer } from '@trpc/server/adapters/standalone'
 import cron from 'node-cron'
 import { format } from 'date-fns'
 import dotenv from 'dotenv'
-
 import { RelayPool } from 'nostr-relaypool'
 import fetch from 'node-fetch'
-import { finishEvent, getPublicKey, Kind } from 'nostr-tools'
+import { finishEvent, getPublicKey, Kind, nip04 } from 'nostr-tools'
+
+import { webcrypto } from 'crypto'
+global.crypto = webcrypto
 
 export type AppRouter = typeof appRouter
 
@@ -38,21 +40,23 @@ const appRouter = router({
         .query(({ input }) => ({ greeting: `hello, ${input}!` })),
 })
 
-const startSubscriptions = () => {
+const startMentionSubscriptions = () => {
     const relayPool = new RelayPool(relays)
 
     const publicKey = getPublicKey(`${process.env.BOT_NOSTR_PRIVATE_KEY}`)
     console.log('publicKey', publicKey)
+
     const unsubscribe = relayPool.subscribe(
         [
             {
-                '#p': [publicKey],
+                '#p': [publicKey, '', 'mention'],
                 kinds: [Kind.Text],
                 since: new Date().getTime() / 1000,
             },
         ],
         relays,
         (event, isAfterEose, relayURL) => {
+            // if ()
             console.log('event', event)
             const doEvent = async () => {
                 const privateKey = `${process.env.BOT_NOSTR_PRIVATE_KEY}`
@@ -66,7 +70,7 @@ const startSubscriptions = () => {
                     kind: 1,
                     created_at: Math.floor(Date.now() / 1000),
                     tags: [['e', event.id, '', 'root']],
-                    content: `Good morning ser,\nthe current price of BTC in USD is: \n ${price.data.buy}`,
+                    content: `DEV DEV Good morning ser,\nthe current price of BTC in USD is: \n ${price.data.buy}. ${event.content}`,
                     pubkey: publicKey,
                 }
 
@@ -87,6 +91,60 @@ const startSubscriptions = () => {
     )
 }
 
+const startPrivateMessageSubscriptions = () => {
+    const relayPool = new RelayPool(relays)
+
+    const publicKey = getPublicKey(`${process.env.BOT_NOSTR_PRIVATE_KEY}`)
+
+    const unsubscribe = relayPool.subscribe(
+        [
+            {
+                '#p': [publicKey],
+                kinds: [Kind.EncryptedDirectMessage],
+                since: new Date().getTime() / 1000,
+            },
+        ],
+        relays,
+        (event, isAfterEose, relayURL) => {
+            // if ()
+            console.log('event', event)
+            const doEvent = async () => {
+                const privateKey = `${process.env.BOT_NOSTR_PRIVATE_KEY}`
+                const publicKey = getPublicKey(privateKey)
+
+                const price = (await fetch('https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT').then((res) =>
+                    res.json(),
+                )) as { data: { buy: string } }
+
+                const message = `DEV DEV Good morning ser,\nthe current price of BTC in USD is: \n ${price.data.buy}. ${event.content}`
+                const ciphertext = await nip04.encrypt(privateKey, event.pubkey, message)
+
+                const unsignedEvent = {
+                    kind: Kind.EncryptedDirectMessage,
+                    created_at: Math.floor(Date.now() / 1000),
+                    tags: [['p', event.pubkey]],
+                    content: ciphertext,
+                    pubkey: publicKey,
+                }
+
+                const finishedEvent = finishEvent(unsignedEvent, privateKey)
+
+                console.log('finishedEvent', finishedEvent)
+
+                relayPool.publish(finishedEvent, relays)
+
+
+
+                return finishedEvent
+            }
+            void doEvent()
+        },
+        undefined,
+        (events, relayURL) => {
+            console.log(events)
+        },
+    )
+}
 const startCron = () => {
     console.log('START CRON')
     cron.schedule('30 * * * * *', () => {
@@ -95,7 +153,8 @@ const startCron = () => {
 }
 
 startCron()
-startSubscriptions()
+startMentionSubscriptions()
+startPrivateMessageSubscriptions()
 
 createHTTPServer({
     router: appRouter,
