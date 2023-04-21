@@ -1,0 +1,67 @@
+{
+    "name": "app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "lint": "next lint",
+        "start": "next start"
+    },
+    "prisma": {
+        "seed": "yarn ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed-prod.ts"
+    },
+    "prettier": {
+        "printWidth": 120,
+        "singleQuote": true,
+        "useTabs": false,
+        "tabWidth": 4,
+        "semi": false,
+        "bracketSpacing": true,
+        "trailingComma": "all"
+    },
+    "dependencies": {
+        "@tanstack/react-query": "^4.29.3",
+        "@trpc/client": "^10.21.0",
+        "@trpc/next": "^10.21.0",
+        "@trpc/react-query": "^10.21.0",
+        "@trpc/server": "^10.21.0",
+        "db-prisma": "1.0.0",
+        "next": "^13.3.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "superjson": "1.12.3",
+        "zod": "^3.21.4",
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@formkit/auto-animate": "^1.0.0-beta.6",
+        "@hookform/resolvers": "^3.1.0",
+        "@mui/icons-material": "^5.11.16",
+        "@mui/material": "^5.12.1",
+        "@tailwindcss/typography": "^0.5.9",
+        "jsonwebtoken": "^9.0.0",
+        "dotenv": "^16.0.3",
+        "lightning": "^8.0.0",
+        "nostr-relaypool": "0.6.16",
+        "trpc-openapi": "^1.1.2",
+        "ws": "^8.13.0",
+        "zustand": "^4.3.7"
+    },
+    "devDependencies": {
+        "@types/eslint": "^8.37.0",
+        "@types/node": "^18.15.13",
+        "@types/prettier": "^2.7.2",
+        "@types/react": "^18.0.37",
+        "@types/react-dom": "^18.0.11",
+        "autoprefixer": "^10.4.14",
+        "postcss": "^8.4.23",
+        "prisma": "^4.13.0",
+        "tailwindcss": "^3.3.1",
+        "typescript": "^5.0.4",
+        "@prisma/nextjs-monorepo-workaround-plugin": "^4.13.0",
+        "@types/jsonwebtoken": "^9.0.1"
+    },
+    "ct3aMetadata": {
+        "initVersion": "7.10.3"
+    }
+}

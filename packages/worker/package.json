@@ -1,0 +1,40 @@
+{
+    "name": "worker",
+    "private": true,
+    "type": "module",
+    "version": "10.14.0",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsx watch src",
+        "start": "node dist",
+        "lint": "eslint --ext \".js,.ts,.tsx\" --report-unused-disable-directives */*.ts",
+        "test-dev": "start-server-and-test 'tsx src' 2022 'tsx client'",
+        "test-start": "start-server-and-test 'node dist/src' 2022 'node dist/client'"
+    },
+    "dependencies": {
+        "@trpc/client": "^10.21.0",
+        "@trpc/server": "^10.21.0",
+        "db-prisma": "1.0.0",
+        "superjson": "1.12.3",
+        "node-cron": "^3.0.2",
+        "zod": "^3.21.4",
+        "nostr-relaypool": "0.6.16",
+        "trpc-openapi": "^1.1.2",
+        "dotenv": "^16.0.3",
+        "ws": "^8.13.0",
+        "node-fetch": "^3.3.1"
+    },
+    "devDependencies": {
+        "@types/node": "^18.15.13",
+        "@types/ws": "^8.5.4",
+        "@types/node-cron": "^3.0.7",
+        "date-fns": "^2.29.3",
+        "eslint": "^8.38.0",
+        "npm-run-all": "^4.1.5",
+        "start-server-and-test": "^2.0.0",
+        "prisma": "^4.13.0",
+        "tsx": "^3.12.6",
+        "typescript": "^5.0.4",
+        "wait-port": "^1.0.4"
+    }
+}
