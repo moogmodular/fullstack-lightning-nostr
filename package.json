@@ -7,10 +7,10 @@
         "dev:worker": "yarn --cwd packages/worker dev",
         "dev:next": "yarn --cwd packages/app dev",
         "dev": "run-p dev:* --print-label",
-        "build:next": "yarn --cwd packages/nextjs-app build",
-        "build:worker": "yarn --cwd packages/nodejs-worker build",
-        "start:next": "yarn --cwd packages/nextjs-app start",
-        "start:worker": "yarn --cwd packages/nodejs-worker start",
+        "build:next": "yarn --cwd packages/app build",
+        "build:worker": "yarn --cwd packages/worker build",
+        "start:next": "yarn --cwd packages/app start",
+        "start:worker": "yarn --cwd packages/worker start",
         "generate:prisma": "yarn --cwd packages/db-prisma npx prisma generate"
     },
     "prettier": {
