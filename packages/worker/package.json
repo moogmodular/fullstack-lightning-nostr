@@ -7,7 +7,6 @@
         "build": "tsc",
         "dev": "tsx watch src",
         "start": "node dist",
-        "lint": "eslint --ext \".js,.ts,.tsx\" --report-unused-disable-directives */*.ts",
         "test-dev": "start-server-and-test 'tsx src' 2022 'tsx client'",
         "test-start": "start-server-and-test 'node dist/src' 2022 'node dist/client'"
     },

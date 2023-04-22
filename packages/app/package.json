@@ -9,7 +9,7 @@
         "start": "next start"
     },
     "prisma": {
-        "seed": "yarn ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed-prod.ts"
+        "seed": "yarn ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
     },
     "prettier": {
         "printWidth": 120,
