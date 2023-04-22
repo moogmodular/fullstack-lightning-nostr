@@ -7,10 +7,7 @@ import { RelayPool } from 'nostr-relaypool'
 import fetch from 'node-fetch'
 import { finishEvent, getPublicKey, Kind, nip04 } from 'nostr-tools'
 
-import { webcrypto } from 'crypto'
 import { PrismaClient } from 'db-prisma/index'
-
-global.crypto = webcrypto
 
 export type AppRouter = typeof appRouter
 
