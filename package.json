@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "preinstall": "npm run inst",
+        "preinstall": "npm --prefix packages/db-prisma install  && npm --prefix packages/app install && npm --prefix packages/worker install",
         "inst": "yarn --cwd packages/db-prisma && yarn --cwd packages/app && yarn --cwd packages/worker",
         "dev:worker": "yarn --cwd packages/worker dev",
         "dev:next": "yarn --cwd packages/app dev",
