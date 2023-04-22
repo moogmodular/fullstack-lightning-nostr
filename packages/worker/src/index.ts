@@ -7,7 +7,7 @@ import { RelayPool } from 'nostr-relaypool'
 import fetch from 'node-fetch'
 import { finishEvent, getPublicKey, Kind, nip04 } from 'nostr-tools'
 
-import { PrismaClient } from 'db-prisma/index'
+import { PrismaClient } from '.prisma/client'
 
 export type AppRouter = typeof appRouter
 
