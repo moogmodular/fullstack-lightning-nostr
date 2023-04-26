@@ -1,13 +1,14 @@
 import { initTRPC } from '@trpc/server'
 import { createHTTPServer } from '@trpc/server/adapters/standalone'
-import cron from 'node-cron'
+import { schedule } from 'node-cron'
 import { format } from 'date-fns'
-import dotenv from 'dotenv'
+import { config as dotenvConfig } from 'dotenv'
 import { RelayPool } from 'nostr-relaypool'
 import fetch from 'node-fetch'
+
 import { finishEvent, getPublicKey, Kind, nip04 } from 'nostr-tools'
 
-import { PrismaClient } from '.prisma/client'
+import { PrismaClient } from '@nostr-bot/prisma'
 
 export type AppRouter = typeof appRouter
 
@@ -16,7 +17,8 @@ const t = initTRPC.create()
 const publicProcedure = t.procedure
 const router = t.router
 
-dotenv.config({ path: '../../.env' })
+// dotenv.config({ path: '../../.env' })
+dotenvConfig({ path: '../../.env' })
 
 const relays = [
     'wss://relay.damus.io',
@@ -43,8 +45,7 @@ const prisma = new PrismaClient()
 const startMentionSubscriptions = async () => {
     const relayPool = new RelayPool(relays)
 
-    const test = await prisma.example.findMany()
-    const test2 = await prisma.helloEntity.findMany()
+    const test = await prisma.user.findMany()
 
     console.log('test', test)
 
@@ -150,7 +151,7 @@ const startPrivateMessageSubscriptions = () => {
 }
 const startCron = () => {
     console.log('START CRON')
-    cron.schedule('30 * * * * *', () => {
+    schedule('30 * * * * *', () => {
         console.log(`running a task every minute --- ${format(new Date(), 'hh:mm:ss')}`)
     })
 }

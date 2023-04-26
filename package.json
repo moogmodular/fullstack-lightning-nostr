@@ -1,19 +1,37 @@
 {
     "name": "nostr-bot",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "private": true,
     "scripts": {
-        "preinstall": "yarn --cwd packages/db-prisma && yarn --cwd packages/app && yarn --cwd packages/worker",
-        "dev:worker": "yarn --cwd packages/worker dev",
-        "dev:next": "yarn --cwd packages/app dev",
+        "dev:worker": "pnpm -r --filter ./packages/worker dev",
+        "dev:webapp": "pnpm -r --filter ./packages/webapp dev",
         "dev": "run-p dev:* --print-label",
-        "build:next": "npm --prefix packages/app run build",
-        "build:worker": "npm --prefix packages/worker run build",
-        "build": "run-p build:* --print-label",
-        "start:next": "npm --prefix packages/app run start",
-        "start:worker": "npm --prefix packages/worker run start",
+        "build:common": "pnpm -r --filter ./packages/common build",
+        "build:prisma": "pnpm -r --filter ./packages/prisma build",
+        "build:worker": "pnpm -r --filter ./packages/worker build",
+        "build:webapp": "pnpm -r --filter ./packages/webapp build",
+        "build": "pnpm -r --filter ./packages/prisma build && npx prisma generate && yarn run-p build:* --print-label",
+        "start:webapp": "pnpm -r --filter ./packages/webapp start",
+        "start:worker": "pnpm -r --filter ./packages/worker start",
         "start": "run-p start:* --print-label",
-        "generate:prisma": "yarn --cwd packages/db-prisma npx prisma generate"
+        "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+        "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+    },
+    "devDependencies": {
+        "@nestjs/cli": "^8.1.4",
+        "@types/node": "^18.16.0",
+        "@typescript-eslint/eslint-plugin": "^5.2.0",
+        "@typescript-eslint/parser": "^5.2.0",
+        "eslint": "^8.1.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-promise": "^5.1.1",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.4.1",
+        "typescript": "^4.4.4"
     },
     "prettier": {
         "printWidth": 120,
@@ -23,20 +41,5 @@
         "semi": false,
         "bracketSpacing": true,
         "trailingComma": "all"
-    },
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.59.0",
-        "@typescript-eslint/parser": "^5.59.0",
-        "eslint": "^8.38.0",
-        "eslint-config-next": "^13.3.0",
-        "prettier": "^2.8.7",
-        "prettier-plugin-tailwindcss": "^0.2.7",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-react": "^7.32.2",
-        "eslint-plugin-react-hooks": "^4.6.0"
-    },
-    "workspaces": [
-        "packages/*"
-    ]
+    }
 }

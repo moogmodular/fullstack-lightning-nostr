@@ -9,10 +9,10 @@ export const exampleRouter = createTRPCRouter({
         }
     }),
     getAll: publicProcedure.query(({ ctx }) => {
-        return ctx.prisma.example.findMany()
+        return ctx.prisma.user.findMany()
     }),
     getHello: publicProcedure.query(({ ctx }) => {
-        const testHello = ctx.prisma.helloEntity.findMany()
+        const testHello = ctx.prisma.user.findMany()
         return { msg: JSON.stringify(testHello) ?? '' }
     }),
 })
