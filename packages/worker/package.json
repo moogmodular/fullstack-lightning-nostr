@@ -5,7 +5,7 @@
     "types": "dist/index.d.js",
     "private": true,
     "scripts": {
-        "postinstall": "yarn run build",
+        "postinstall": "pnpm run build",
         "prebuild": "rimraf dist",
         "build": "tsc -p tsconfig.build.json",
         "dev": "tsx watch src",

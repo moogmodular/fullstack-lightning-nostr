@@ -10,7 +10,7 @@
         "build:prisma": "pnpm -r --filter ./packages/prisma build",
         "build:worker": "pnpm -r --filter ./packages/worker build",
         "build:webapp": "pnpm -r --filter ./packages/webapp build",
-        "build": "pnpm -r --filter ./packages/prisma build && npx prisma generate && yarn run-p build:* --print-label",
+        "build": "pnpm -r --filter ./packages/prisma build && npx prisma generate && pnpm run-p build:* --print-label",
         "start:webapp": "pnpm -r --filter ./packages/webapp start",
         "start:worker": "pnpm -r --filter ./packages/worker start",
         "start": "run-p start:* --print-label",
@@ -31,7 +31,7 @@
         "eslint-plugin-promise": "^5.1.1",
         "npm-run-all": "^4.1.5",
         "prettier": "^2.4.1",
-        "typescript": "^4.4.4"
+        "typescript": "^5.0.4"
     },
     "prettier": {
         "printWidth": 120,

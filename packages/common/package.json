@@ -5,15 +5,15 @@
   "types": "dist/index.d.js",
   "private": true,
   "scripts": {
-    "postinstall": "yarn run build",
+    "postinstall": "pnpm run build",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "tsc -p tsconfig.build.json -w --preserveWatchOutput",
-    "start:dev": "yarn run build:watch"
+    "start:dev": "pnpm run build:watch"
   },
   "devDependencies": {
     "@types/node": "^18.16.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.4.4"
+    "typescript": "^5.0.4"
   }
 }
