@@ -9,10 +9,10 @@ export const exampleRouter = createTRPCRouter({
         }
     }),
     getAll: publicProcedure.query(({ ctx }) => {
-        return ctx.prisma.user.findMany()
+        return ctx.prisma.relay.findMany()
     }),
     getHello: publicProcedure.query(({ ctx }) => {
-        const testHello = ctx.prisma.user.findMany()
+        const testHello = ctx.prisma.relay.findMany()
         return { msg: JSON.stringify(testHello) ?? '' }
     }),
 })

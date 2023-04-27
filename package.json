@@ -13,6 +13,7 @@
         "build": "pnpm -r --filter ./packages/prisma build && npx prisma generate && pnpm run-p build:* --print-label",
         "start:webapp": "pnpm -r --filter ./packages/webapp start",
         "start:worker": "pnpm -r --filter ./packages/worker start",
+        "generate": "pnpm -r --filter ./packages/prisma generate",
         "start": "run-p start:* --print-label",
         "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
         "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"

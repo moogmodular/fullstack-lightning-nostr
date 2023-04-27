@@ -5,7 +5,7 @@ import { z } from 'zod'
  * built with invalid env vars.
  */
 const server = z.object({
-    BOT_NOSTR_PRIVATE_KEY: z.string(),
+    BOT_NOSTR_NSEC: z.string(),
     NODE_ENV: z.enum(['development', 'test', 'production']),
 })
 
@@ -24,7 +24,7 @@ const client = z.object({
  * @type {Record<keyof z.infer<typeof server> | keyof z.infer<typeof client>, string | undefined>}
  */
 const processEnv = {
-    BOT_NOSTR_PRIVATE_KEY: process.env.BOT_NOSTR_PRIVATE_KEY,
+    BOT_NOSTR_NSEC: process.env.BOT_NOSTR_NSEC,
     NODE_ENV: process.env.NODE_ENV,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 }
