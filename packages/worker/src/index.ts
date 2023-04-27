@@ -9,6 +9,9 @@ import { Event, getPublicKey, Kind, nip04, nip19 } from 'nostr-tools'
 import { doHelp, doPrice, doWeather } from './private-message-service'
 import { doAdminMessage, doGenericMessage } from './admin-service'
 import { PrismaClient } from '@nostr-bot/prisma'
+import { webcrypto } from 'crypto'
+
+globalThis.crypto = webcrypto as unknown as Crypto
 
 export type AppRouter = typeof workerRouter
 

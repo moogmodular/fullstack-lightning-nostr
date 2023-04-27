@@ -3,7 +3,6 @@ export const relays = [
     'wss://offchain.pub',
     'wss://nostr.wine',
     'wss://nostr-pub.wellorder.net',
-    'wss://relay.nostr.info',
     'wss://nostr.bitcoiner.social',
     'wss://nostr.oxtr.dev',
     'wss://nostr.fmt.wiz.biz',
