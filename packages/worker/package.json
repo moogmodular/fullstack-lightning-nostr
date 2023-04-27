@@ -18,6 +18,7 @@
         "@nostr-bot/prisma": "workspace:*",
         "@trpc/client": "^10.21.1",
         "@trpc/server": "^10.21.1",
+        "isomorphic-fetch": "^3.0.0",
         "dotenv": "^16.0.3",
         "module-alias": "^2.2.2",
         "node-cron": "^3.0.2",

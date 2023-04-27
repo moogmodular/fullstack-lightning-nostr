@@ -1,5 +1,5 @@
 import { RelayPool } from 'nostr-relaypool'
-import fetch from 'node-fetch'
+import 'isomorphic-fetch'
 import { Event, finishEvent, getPublicKey, Kind, nip04, nip19 } from 'nostr-tools'
 import { PrismaClient } from '@nostr-bot/prisma'
 

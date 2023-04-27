@@ -3,7 +3,7 @@ import { createHTTPServer } from '@trpc/server/adapters/standalone'
 import { format } from 'date-fns'
 import { config as dotenvConfig } from 'dotenv'
 
-import cron from 'node-cron'
+import { schedule } from 'node-cron'
 import { RelayPool } from 'nostr-relaypool'
 import { Event, getPublicKey, Kind, nip04, nip19 } from 'nostr-tools'
 import { doHelp, doPrice, doWeather } from './private-message-service'
@@ -32,7 +32,7 @@ const workerRouter = router({
 
 const startCron = () => {
     console.log('START CRON')
-    cron.schedule('10 * * * * *', () => {
+    schedule('10 * * * * *', () => {
         console.log(`running a task 10 * * * * * --- ${format(new Date(), 'hh:mm:ss')}`)
     })
 }
@@ -50,11 +50,11 @@ const subscriptionBase = async () => {
 
 type BotFunctions = 'help' | 'weather' | 'price'
 
-function getContent(content) {
+const getContent = (content: string) => {
     const contentArgs = content
         .split('.')
-        .map((c) => c.trim())
-        .map((c) => c.toLowerCase())
+        .map((c: string) => c.trim())
+        .map((c: string) => c.toLowerCase())
 
     const botFunction = contentArgs[0] as BotFunctions
     return { contentArgs, botFunction }
