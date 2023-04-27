@@ -12,7 +12,7 @@
     "start:dev": "pnpm run build:watch"
   },
   "devDependencies": {
-    "@types/node": "^18.16.0",
+    "@types/node": "^18.16.1",
     "rimraf": "^3.0.2",
     "typescript": "^5.0.4"
   }

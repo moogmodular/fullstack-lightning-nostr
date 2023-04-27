@@ -16,10 +16,10 @@
     "dependencies": {
         "@nostr-bot/common": "workspace:*",
         "@nostr-bot/prisma": "workspace:*",
-        "@trpc/client": "^10.21.1",
-        "@trpc/server": "^10.21.1",
-        "isomorphic-fetch": "^3.0.0",
+        "@trpc/client": "^10.21.2",
+        "@trpc/server": "^10.21.2",
         "dotenv": "^16.0.3",
+        "isomorphic-fetch": "^3.0.0",
         "module-alias": "^2.2.2",
         "node-cron": "^3.0.2",
         "node-fetch": "^3.3.1",
