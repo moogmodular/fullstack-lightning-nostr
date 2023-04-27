@@ -6,6 +6,7 @@ import { z } from 'zod'
  */
 const server = z.object({
     BOT_NOSTR_NSEC: z.string(),
+    ADMIN_NOSTR_NSEC: z.string(),
     NODE_ENV: z.enum(['development', 'test', 'production']),
 })
 
@@ -25,6 +26,7 @@ const client = z.object({
  */
 const processEnv = {
     BOT_NOSTR_NSEC: process.env.BOT_NOSTR_NSEC,
+    ADMIN_NOSTR_NSEC: process.env.ADMIN_NOSTR_NSEC,
     NODE_ENV: process.env.NODE_ENV,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 }
