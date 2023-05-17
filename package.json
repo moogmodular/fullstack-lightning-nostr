@@ -1,5 +1,5 @@
 {
-  "name": "nostr-bot",
+  "name": "fln",
   "private": true,
   "engines": {
     "node": ">=v18.12.1"
@@ -22,7 +22,7 @@
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
     "@manypkg/cli": "^0.20.0",
-    "@nostr-bot/eslint-config": "^0.1.0",
+    "@fln/eslint-config": "^0.1.0",
     "@types/prettier": "^2.7.2",
     "eslint": "^8.40.0",
     "prettier": "^2.8.8",

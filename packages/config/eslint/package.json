@@ -1,5 +1,5 @@
 {
-  "name": "@nostr-bot/eslint-config",
+  "name": "@fln/eslint-config",
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",

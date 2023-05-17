@@ -11,8 +11,8 @@ import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
-import { getServerSession, type Session } from "@nostr-bot/auth";
-import { prisma } from "@nostr-bot/db";
+import { getServerSession, type Session } from "@fln/auth";
+import { prisma } from "@fln/db";
 
 /**
  * 1. CONTEXT

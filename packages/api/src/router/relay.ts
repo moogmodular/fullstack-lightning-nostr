@@ -1,5 +1,5 @@
 import { createTRPCRouter, publicProcedure } from '../trpc'
-import { addTwoNumbers } from '@nostr-bot/common'
+import { addTwoNumbers } from '@fln/common'
 
 export const relayRouter = createTRPCRouter({
     list: publicProcedure.query(async ({ ctx }) => {

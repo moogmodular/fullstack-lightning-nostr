@@ -1,6 +1,6 @@
 import { doAdminMessage, doGenericMessage } from './admin-service'
 import { doHelp, doPrice, doWeather } from './private-message-service'
-import { prisma, type PrismaClient } from '@nostr-bot/db'
+import { prisma, type PrismaClient } from '@fln/db'
 import { webcrypto } from 'crypto'
 import { format } from 'date-fns'
 import { config as dotenvConfig } from 'dotenv'

@@ -1,6 +1,6 @@
 import { type RelayPool } from 'nostr-relaypool'
 import 'isomorphic-fetch'
-import { type PrismaClient } from '@nostr-bot/db'
+import { type PrismaClient } from '@fln/db'
 import { type Event, finishEvent, getPublicKey, Kind, nip04, nip19 } from 'nostr-tools'
 
 export const doWeather = async (

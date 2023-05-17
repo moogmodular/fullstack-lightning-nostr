@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-import baseConfig from "@nostr-bot/tailwind-config";
+import baseConfig from "@fln/tailwind-config";
 
 export default {
   content: ["./src/**/*.tsx"],

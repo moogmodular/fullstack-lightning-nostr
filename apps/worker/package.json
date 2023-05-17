@@ -1,5 +1,5 @@
 {
-    "name": "@nostr-bot/worker",
+    "name": "@fln/worker",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -10,9 +10,9 @@
         "dev:watch": "nodemon src/index.ts -e ts,json --exec 'npm run local'"
     },
     "dependencies": {
-        "@nostr-bot/api": "^0.1.0",
-        "@nostr-bot/common": "^0.1.0",
-        "@nostr-bot/db": "^0.1.0",
+        "@fln/api": "^0.1.0",
+        "@fln/common": "^0.1.0",
+        "@fln/db": "^0.1.0",
         "express": "^4.18.2",
         "isomorphic-fetch": "^3.0.0",
         "module-alias": "^2.2.2",
@@ -26,7 +26,7 @@
         "zod": "^3.21.4"
     },
     "devDependencies": {
-        "@nostr-bot/eslint-config": "^0.1.0",
+        "@fln/eslint-config": "^0.1.0",
         "@types/express": "^4.17.17",
         "@types/node": "^20.1.7",
         "@types/node-cron": "^3.0.7",

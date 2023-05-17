@@ -1,4 +1,4 @@
-import { type PrismaClient } from '@nostr-bot/db'
+import { type PrismaClient } from '@fln/db'
 import { type RelayPool } from 'nostr-relaypool'
 import { type Event, finishEvent, getPublicKey, Kind, nip04, nip19 } from 'nostr-tools'
 

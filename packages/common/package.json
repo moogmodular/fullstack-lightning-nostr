@@ -1,5 +1,5 @@
 {
-    "name": "@nostr-bot/common",
+    "name": "@fln/common",
     "version": "0.1.0",
     "main": "./index.ts",
     "types": "./index.ts",
@@ -11,7 +11,7 @@
         "type-check": "tsc --noEmit"
     },
     "devDependencies": {
-        "@nostr-bot/eslint-config": "^0.1.0",
+        "@fln/eslint-config": "^0.1.0",
         "@types/node": "^18.16.12",
         "eslint": "^8.40.0",
         "rimraf": "^3.0.2",
