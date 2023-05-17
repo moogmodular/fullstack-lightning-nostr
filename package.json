@@ -1,38 +1,33 @@
 {
-    "name": "nostr-bot",
-    "version": "0.0.0",
-    "private": true,
-    "scripts": {
-        "dev:worker": "pnpm -r --filter ./packages/worker dev",
-        "dev:webapp": "pnpm -r --filter ./packages/webapp dev",
-        "dev": "run-p dev:* --print-label",
-        "build:common": "pnpm -r --filter ./packages/common build",
-        "build:prisma": "pnpm -r --filter ./packages/prisma build",
-        "build:worker": "pnpm -r --filter ./packages/worker build",
-        "build:webapp": "pnpm -r --filter ./packages/webapp build",
-        "build": "pnpm -r --filter ./packages/prisma build && npx prisma generate && pnpm run-p build:* --print-label",
-        "start:webapp": "pnpm -r --filter ./packages/webapp start",
-        "start:worker": "pnpm -r --filter ./packages/worker start",
-        "generate": "pnpm -r --filter ./packages/prisma generate",
-        "start": "run-p start:* --print-label",
-        "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
-        "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
-    },
-    "devDependencies": {
-        "@types/node": "^18.16.1",
-        "@typescript-eslint/eslint-plugin": "^5.59.1",
-        "@typescript-eslint/parser": "^5.59.1",
-        "eslint": "^8.39.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-config-standard": "^16.0.3",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-promise": "^5.2.0",
-        "npm-run-all": "^4.1.5",
-        "prettier": "^2.8.8",
-        "typescript": "^5.0.4"
-    },
+  "name": "nostr-bot",
+  "private": true,
+  "engines": {
+    "node": ">=v18.12.1"
+  },
+  "packageManager": "pnpm@8.4.0",
+  "scripts": {
+    "build": "turbo build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
+    "db:generate": "turbo db:generate",
+    "db:push": "turbo db:push db:generate",
+    "dev": "turbo dev --parallel",
+    "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
+    "lint": "turbo lint && manypkg check",
+    "lint:fix": "turbo lint:fix && manypkg fix",
+    "type-check": "turbo type-check"
+  },
+  "dependencies": {
+    "@nostr-bot/eslint-config": "*",
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@manypkg/cli": "^0.20.0",
+    "@types/prettier": "^2.7.2",
+    "eslint": "^8.40.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "turbo": "^1.9.3",
+    "typescript": "^5.0.4"
+  },
     "prettier": {
         "printWidth": 120,
         "singleQuote": true,

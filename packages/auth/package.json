@@ -1,20 +1,28 @@
 {
-    "name": "@nostr-bot/common",
+    "name": "@nostr-bot/auth",
     "version": "0.1.0",
     "main": "./index.ts",
     "types": "./index.ts",
-    "private": true,
+    "license": "MIT",
     "scripts": {
         "clean": "rm -rf .turbo node_modules",
         "lint": "eslint .",
         "lint:fix": "pnpm lint --fix",
         "type-check": "tsc --noEmit"
     },
+    "dependencies": {
+        "@nostr-bot/db": "*",
+        "@next-auth/prisma-adapter": "^1.0.6",
+        "@t3-oss/env-nextjs": "^0.3.1",
+        "next": "^13.4.1",
+        "next-auth": "^4.22.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "zod": "^3.21.4"
+    },
     "devDependencies": {
         "@nostr-bot/eslint-config": "*",
         "eslint": "^8.40.0",
-        "@types/node": "^18.16.1",
-        "rimraf": "^3.0.2",
         "typescript": "^5.0.4"
     }
 }

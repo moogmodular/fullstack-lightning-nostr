@@ -1,2 +1,8 @@
 packages:
-  - packages/*
+    - apps/webapp
+    - apps/worker
+    - packages/api
+    - packages/auth
+    - packages/common
+    - packages/db
+    - packages/config/*

@@ -1,33 +1,22 @@
-module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    extraFileExtensions: ['liquid'],
-    project: 'tsconfig.json',
-    sourceType: 'module',
-  },
-  plugins: ['@typescript-eslint/eslint-plugin'],
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+/** @type {import("eslint").Linter.Config} */
+const config = {
   root: true,
-  env: {
-    node: true,
-    jest: true,
-  },
-  ignorePatterns: ['.eslintrc.js', 'dist', 'node_modules', 'examples', 'scripts'],
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        'endOfLine': 'auto',
-        'singleQuote': true,
-        'trailingComma': 'all'
-      }
+  extends: ["@nostr-bot/eslint-config"], // uses the config in `packages/config/eslint`
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    tsconfigRootDir: __dirname,
+    project: [
+      "./tsconfig.json",
+      "./apps/*/tsconfig.json",
+      "./packages/*/tsconfig.json",
     ],
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+  },
+  settings: {
+    next: {
+      rootDir: ["apps/webapp"],
+    },
   },
 };
+
+module.exports = config;

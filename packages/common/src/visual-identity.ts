@@ -1,3 +1,3 @@
 export const colorPalette = {
-  primary: '#ffffff',
-};
+    primary: '#ffffff',
+}
