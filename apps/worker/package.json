@@ -5,7 +5,7 @@
     "scripts": {
         "clean": "rimraf ./build",
         "build": "npm run clean && tsc",
-        "start": "node src/index.ts",
+        "start": "ts-node src/index.ts",
         "dev": "ts-node src/index.ts",
         "dev:watch": "nodemon src/index.ts -e ts,json --exec 'npm run local'"
     },
