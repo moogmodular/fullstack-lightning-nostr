@@ -11,16 +11,16 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@nostr-bot/auth": "*",
-    "@nostr-bot/db": "*",
-    "@nostr-bot/common": "*",
-    "@trpc/client": "^10.25.0",
-    "@trpc/server": "^10.25.0",
+    "@nostr-bot/auth": "^0.1.0",
+    "@nostr-bot/common": "^0.1.0",
+    "@nostr-bot/db": "^0.1.0",
+    "@trpc/client": "^10.26.0",
+    "@trpc/server": "^10.26.0",
     "superjson": "1.9.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@nostr-bot/eslint-config": "*",
+    "@nostr-bot/eslint-config": "^0.1.0",
     "eslint": "^8.40.0",
     "typescript": "^5.0.4"
   }

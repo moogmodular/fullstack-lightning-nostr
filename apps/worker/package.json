@@ -10,9 +10,9 @@
         "dev:watch": "nodemon src/index.ts -e ts,json --exec 'npm run local'"
     },
     "dependencies": {
-        "@nostr-bot/api": "*",
-        "@nostr-bot/common": "*",
-        "@nostr-bot/db": "*",
+        "@nostr-bot/api": "^0.1.0",
+        "@nostr-bot/common": "^0.1.0",
+        "@nostr-bot/db": "^0.1.0",
         "express": "^4.18.2",
         "isomorphic-fetch": "^3.0.0",
         "module-alias": "^2.2.2",
@@ -26,21 +26,21 @@
         "zod": "^3.21.4"
     },
     "devDependencies": {
-        "@types/node": "^20.1.5",
+        "@nostr-bot/eslint-config": "^0.1.0",
         "@types/express": "^4.17.17",
-        "nodemon": "^2.0.19",
-        "ts-node": "^10.9.1",
-        "@nostr-bot/eslint-config": "*",
-        "typescript": "^5.0.4",
+        "@types/node": "^20.1.7",
         "@types/node-cron": "^3.0.7",
         "@types/ws": "^8.5.4",
-        "date-fns": "^2.29.3",
-        "eslint": "^8.39.0",
+        "date-fns": "^2.30.0",
+        "eslint": "^8.40.0",
+        "nodemon": "^2.0.22",
         "npm-run-all": "^4.1.5",
-        "prisma": "^4.13.0",
+        "prisma": "^4.14.0",
         "rimraf": "^5.0.0",
         "start-server-and-test": "^2.0.0",
-        "tsx": "^3.12.6",
+        "ts-node": "^10.9.1",
+        "tsx": "^3.12.7",
+        "typescript": "^5.0.4",
         "wait-port": "^1.0.4"
     }
 }

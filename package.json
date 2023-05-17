@@ -18,23 +18,23 @@
     "type-check": "turbo type-check"
   },
   "dependencies": {
-    "@nostr-bot/eslint-config": "*",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
     "@manypkg/cli": "^0.20.0",
+    "@nostr-bot/eslint-config": "^0.1.0",
     "@types/prettier": "^2.7.2",
     "eslint": "^8.40.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
-    "turbo": "^1.9.3",
+    "turbo": "^1.9.6",
     "typescript": "^5.0.4"
   },
-    "prettier": {
-        "printWidth": 120,
-        "singleQuote": true,
-        "useTabs": false,
-        "tabWidth": 4,
-        "semi": false,
-        "bracketSpacing": true,
-        "trailingComma": "all"
-    }
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "useTabs": false,
+    "tabWidth": 4,
+    "semi": false,
+    "bracketSpacing": true,
+    "trailingComma": "all"
+  }
 }

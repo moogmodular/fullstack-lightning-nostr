@@ -11,9 +11,9 @@
         "type-check": "tsc --noEmit"
     },
     "devDependencies": {
-        "@nostr-bot/eslint-config": "*",
+        "@nostr-bot/eslint-config": "^0.1.0",
+        "@types/node": "^18.16.12",
         "eslint": "^8.40.0",
-        "@types/node": "^18.16.1",
         "rimraf": "^3.0.2",
         "typescript": "^5.0.4"
     }

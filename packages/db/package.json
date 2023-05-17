@@ -15,9 +15,9 @@
     "@prisma/client": "^4.14.0"
   },
   "devDependencies": {
-    "@nostr-bot/eslint-config": "*",
-    "eslint": "^8.40.0",
+    "@nostr-bot/eslint-config": "^0.1.0",
     "dotenv-cli": "^7.2.1",
+    "eslint": "^8.40.0",
     "prisma": "^4.14.0",
     "typescript": "^5.0.4"
   }
